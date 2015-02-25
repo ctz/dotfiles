@@ -1,0 +1,46 @@
+#!/usr/bin/python
+
+import sys
+import os
+
+if __name__ == '__main__':
+    if len(sys.argv) < 3:
+        print 'usage: %s <notice-file>|check <apply-file> <apply-file> ...' % sys.argv[0]
+        print
+        print 'ensures the contents of notice-file appear at the front of each apply-file'
+        print '"check" just checks the files start with a comment'
+        sys.exit(1)
+
+    check_mode = sys.argv[1] == 'check'
+
+    if not check_mode:
+        notice = open(sys.argv[1], 'r').read()
+        assert notice.startswith('/*')
+        assert notice.endswith('*/\n')
+
+    for f in sys.argv[2:]:
+        with open(f, 'r') as ff:
+            contents = ff.read()
+
+        if check_mode:
+            if not contents.startswith('/*'):
+                print f, 'does not start with a comment'
+
+            arr_count = contents.lower().count('all rights reserved')
+            if arr_count != 1:
+                print f, 'missing/duplicate "All rights reserved"'
+
+            continue
+
+        if contents.startswith('/*') and not contents.startswith(notice):
+            print f, 'starts with another comment', contents.split('*/')[0]
+            continue
+
+        if contents.startswith(notice):
+            print f, 'already processed'
+            continue
+
+        new_contents = notice + '\n' + contents
+        with open(f + '.tmp', 'w') as ff:
+            ff.write(new_contents)
+        os.rename(f + '.tmp', f)

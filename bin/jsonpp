@@ -1,0 +1,40 @@
+#!/usr/bin/python
+
+import json
+import sys
+
+pretty_params = dict(
+    sort_keys = True,
+    encoding = 'UTF-8',
+    indent = 2,
+    separators = (',', ': ')
+)
+
+def help():
+    print 'usage:'
+    print '  ', sys.argv[0], '<FILENAME>: pretty print FILENAME in place'
+    print '  ', sys.argv[0], ': pretty print stdin to stdout'
+    sys.exit(1)
+
+if __name__ == '__main__':
+    filename = None
+
+    if len(sys.argv) == 2:
+        filename = sys.argv[1]
+        inputf = open(filename, 'r')
+    elif len(sys.argv) == 1:
+        inputf = sys.stdin
+    else:
+        help()
+
+    obj = json.load(inputf, 'utf-8')
+    inputf.close()
+
+    if filename is not None:
+        outputf = open(filename, 'w')
+    else:
+        outputf = sys.stdout
+
+    json.dump(obj, outputf, **pretty_params)
+    print >>outputf
+    outputf.close()
