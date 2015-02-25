@@ -6,4 +6,5 @@ filetype plugin indent on
 set hlsearch
 set number
 colorscheme evening
+match ErrorMsg '\s\+$'
 
