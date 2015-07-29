@@ -4,7 +4,7 @@ set shiftwidth=2
 set cindent cinoptions={0,(0,g0
 colorscheme evening
 set number
-match ErrorMsg '\s\+$'
+match ErrorMsg '[^ ]\s\+$'
 set hlsearch
 
 set expandtab
