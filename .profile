@@ -20,9 +20,3 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
-# decide on an editor:
-export EDITOR=vim
-
-# make python repl useful
-export PYTHONSTARTUP=~/.pythonrc
