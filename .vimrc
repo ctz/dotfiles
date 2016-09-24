@@ -23,6 +23,7 @@ augroup filetype
   au BufRead *.dox                 set ft=cpp.doxygen
   au BufRead *.rst                 set noautoindent nocindent
   au BufRead *.xml                 set equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+  au BufRead *.rs                  set ft=rust cinkeys-=: comments-=:// comments+=://\! comments+=:///
 augroup END
 
 set backspace=indent,eol,start

@@ -112,3 +112,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# include common things between login/non-login
+if [ -f "$HOME/.jbp" ]; then
+    . "$HOME/.jbp"
+fi
