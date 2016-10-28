@@ -17,6 +17,7 @@ set_prompt()
    local fancyx='\342\234\227'
    # unicode "✓"
    local checkmark='\342\234\223'
+   local branch='\342\216\207'
    PS1="\[$txtbold\]\[$txtwhite\]\n"
    if [[ $last_cmd == 0 ]]; then
       PS1+="\[$txtgreen\]$checkmark "
@@ -29,8 +30,10 @@ set_prompt()
    else
        PS1+="\[$txtyellow\]"   
    fi
-   PS1+="\u\[$txtwhite\]@\h\[$txtgreen\]:\w"
-   PS1+="\[$txtpurple\]$(__git_ps1 ' (%s)')\[$txtwhite\]"
-   PS1+=" \\$\[$txtreset\] "
+   PS1+="\u\[$txtwhite\]@\h\[$txtgreen\]"
+   PS1+="\[$txtcyan\]$(__git_ps1 " $branch %s")\[$txtwhite\]"
+   PS1+=" \[$txtgreen\]\w\\$\[$txtreset\] "
 }
 PROMPT_COMMAND='set_prompt'
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWCOLORHINTS=1
