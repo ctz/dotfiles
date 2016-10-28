@@ -2,9 +2,10 @@ set nocompatible
 syntax on
 set shiftwidth=2
 set cindent cinoptions={0,(0,g0
-colorscheme evening
+colorscheme manxome
 set number
 match ErrorMsg '[^ ]\s\+$'
+match ErrorMsg '^\s\+$'
 set hlsearch
 
 set expandtab
@@ -18,6 +19,8 @@ augroup filetype
   au BufRead SConstruct            set ft=python
   au BufRead all-cmds.in           set ft=python
   au BufRead *.msgs                set ft=python
+  au BufRead *.h                   set shiftwidth=4 tabstop=4
+  au BufRead *.cpp                 set shiftwidth=4 tabstop=4
   au BufRead *.go                  set ft=go noexpandtab softtabstop=4 shiftwidth=4 tabstop=4
   au BufRead *.java                set ft=java softtabstop=2 shiftwidth=2 tabstop=2
   au BufRead *.dox                 set ft=cpp.doxygen

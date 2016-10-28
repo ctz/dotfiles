@@ -117,9 +117,14 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+PATH="$HOME/toolchain/bin:$PATH"
+
 # decide on an editor:
 export EDITOR=vim
 
 # make python repl useful
 export PYTHONSTARTUP=~/.pythonrc
 
+
+export NVM_DIR="/home/jbp/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
