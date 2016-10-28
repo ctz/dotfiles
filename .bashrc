@@ -125,6 +125,7 @@ export EDITOR=vim
 # make python repl useful
 export PYTHONSTARTUP=~/.pythonrc
 
+source ~/.bash_prompt
 
 export NVM_DIR="/home/jbp/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
