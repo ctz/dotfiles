@@ -116,3 +116,14 @@ fi
 if [ -f "$HOME/.jbp" ]; then
     . "$HOME/.jbp"
 fi
+
+PATH="$HOME/toolchain/bin:$PATH"
+
+# decide on an editor:
+export EDITOR=vim
+
+# make python repl useful
+export PYTHONSTARTUP=~/.pythonrc
+
+source ~/.bash_prompt
+
