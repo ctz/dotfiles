@@ -2,7 +2,7 @@ set nocompatible
 syntax on
 set shiftwidth=2
 set cindent cinoptions={0,(0,g0
-colorscheme manxome
+colorscheme evening
 set number
 match ErrorMsg '[^ ]\s\+$'
 match ErrorMsg '^\s\+$'
@@ -26,7 +26,7 @@ augroup filetype
   au BufRead *.dox                 set ft=cpp.doxygen
   au BufRead *.rst                 set noautoindent nocindent
   au BufRead *.xml                 set equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
-  au BufRead *.rs                  set ft=rust cinkeys-=: comments-=:// comments+=://\! comments+=:///
+  au BufRead *.rs                  set shiftwidth=4 tabstop=4 ft=rust cinkeys-=: comments-=:// comments+=://\! comments+=:///
 augroup END
 
 set backspace=indent,eol,start
