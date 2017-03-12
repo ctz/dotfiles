@@ -35,3 +35,6 @@ autocmd FileType python set shiftwidth=4
 set list listchars=tab:>·
 set autoindent
 set fo+=cr
+
+highlight GitGutterAdd ctermfg=green ctermbg=darkgreen
+highlight GitGutterChange ctermfg=blue ctermbg=darkblue
