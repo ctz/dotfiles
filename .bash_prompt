@@ -17,7 +17,7 @@ set_prompt()
    local fancyx='\342\234\227'
    # unicode "✓"
    local checkmark='\342\234\223'
-   local branch='\342\216\207'
+   local branch='\342\216\207 '
    PS1="\[$txtbold\]\[$txtwhite\]\n"
    if [[ $last_cmd == 0 ]]; then
       PS1+="\[$txtgreen\]$checkmark "
