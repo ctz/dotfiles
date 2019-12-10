@@ -118,6 +118,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 PATH="$HOME/toolchain/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # decide on an editor:
 export EDITOR=vim
