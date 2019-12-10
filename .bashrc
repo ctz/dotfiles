@@ -112,9 +112,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+# include common things between login/non-login
+if [ -f "$HOME/.jbp" ]; then
+    . "$HOME/.jbp"
 fi
 
 PATH="$HOME/toolchain/bin:$PATH"
@@ -128,5 +128,3 @@ export PYTHONSTARTUP=~/.pythonrc
 
 source ~/.bash_prompt
 
-export NVM_DIR="/home/jbp/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

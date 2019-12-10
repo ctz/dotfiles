@@ -21,4 +21,7 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-export PATH="$HOME/.cargo/bin:$PATH"
+# include common things between login/non-login
+if [ -f "$HOME/.jbp" ]; then
+    . "$HOME/.jbp"
+fi

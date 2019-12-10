@@ -1,0 +1,13 @@
+# ~/.jbp: executed for all shells
+
+# decide on an editor:
+export EDITOR=vim
+
+# make python repl useful
+export PYTHONSTARTUP=~/.pythonrc
+
+# add ~/bin to path
+export PATH="$HOME/bin:$PATH"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
