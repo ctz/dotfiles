@@ -2,7 +2,7 @@ set nocompatible
 syntax on
 set shiftwidth=2
 set cindent cinoptions={0,(0,g0
-colorscheme evening
+colorscheme manxome
 set number
 match ErrorMsg '[^ ]\s\+$'
 match ErrorMsg '^\s\+$'
