@@ -127,3 +127,4 @@ export PYTHONSTARTUP=~/.pythonrc
 
 source ~/.bash_prompt
 
+. "$HOME/.cargo/env"

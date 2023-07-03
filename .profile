@@ -26,3 +26,4 @@ if [ -f "$HOME/.jbp" ]; then
     . "$HOME/.jbp"
 fi
 
+. "$HOME/.cargo/env"
